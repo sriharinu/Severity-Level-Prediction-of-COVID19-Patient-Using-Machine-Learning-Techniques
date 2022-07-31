@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <link rel="stylesheet" href="/static/PredictionPage.css">
+    <link rel="stylesheet" type = "text/css" href ="/static/bootstrap.min.css">
+  <script type="text/javascript" src="/static/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </button>
+
+  <script type="text/javascript">
+    window.onscroll = function()
+    {
+      scrollFunction()
+    };
+
+    function scrollFunction(){
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+      function validateform(){  
+     const input1=document.myform.input1.value;  
+     const input2=document.myform.input2.value;  
+  
+     if (input1<0 || input1>19){  
+     alert("Out Of range");  
+      return false;  
+     }else if(input2<-4.5 || input2>2.66){  
+     alert("Out of range");  
+      return false;
+    }  
+}  
+  </script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">COVID-19 Severity Prediction</a>
+      </div>
+
+      <div class="collapse navbar-collapse " id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="http://127.0.0.1:5000/comparision">Accuracy</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/login.html"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+        </ul>
+      </div>
+
+      
+    </div>
+  </nav>
+
+<div class="container">
+  <div class="jumbotron">
+   <h1>Predict Severity </h1>
+   <p>Please enter the below values of COVID-19 patient </p>
+
+  </div>
+  </div>
+<div class="container">
+  <div class="container">
+    <div class="col">
+      
+    </div>
+  </div>
+
+
+  
+  <div class="col-xs-9" style="text-align: center;">
+    <div class="form-area" >
+      <form action="/prediction" onsubmit="return validateform()" method="POST" >
+      <br style="clear: both">
+        <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> PREDICTION </h3>
+        
+        
+        <div class="form-group">
+          <label id="label">Patient age quantile</label>
+          <input type="text" class="form-control" id="input" name="input1" placeholder="0 - 19" >
+        </div>
+
+        
+        <div class="form-group">
+          <label id="label">Hematocrit </label>
+          <input type="text" class="form-control" id="input" name="input2" placeholder="-4.5 to 2.66" >
+        </div>     
+
+
+        <div class="form-group">
+          <label id="label">Hemoglobin </label>
+          <input type="text" class="form-control" id="input" name="input3" placeholder="-4.35 to 2.67" >
+        </div>
+
+        <div class="form-group">
+          <label id="label">Platelets</label>
+          <input type="text" class="form-control" id="input" name="input4" placeholder="-2.55 to 9.53" >
+        </div>
+
+        <div class="form-group">
+          <label id="label">Mean platelet volume</label>
+          <input type="text" class="form-control" id="input" name="input5" placeholder="-2.46 to 3.71">
+        </div>
+
+        <div class="form-group">
+          <label id="label"> Red blood Cells</label>
+          <input type="text" class="form-control" id="input" name="input6" placeholder="-3.97 to 3.65">
+        </div>     
+
+        <div class="form-group">
+          <label id="label"> Lymphocytes</label>
+          <input type="text" class="form-control" id="input" name="input7" placeholder="-1.87 to 3.7">
+        </div>
+
+        <div class="form-group">
+          <label id="label">Mean corpuscular hemoglobin concentration (MCHC) </label>
+          <input type="text" class="form-control" id="input" name="input8" placeholder="-5.43 to 3.33">
+        </div>
+
+        <div class="form-group">
+          <label id="label">Leukocytes </label>
+          <input type="text" class="form-control" id="input" name="input9" placeholder="-2.02 to 4.52" >
+        </div>
+
+        <div class="form-group">
+          <label id="label"> Basophils</label>
+          <input type="text" class="form-control" id="input" name="input10" placeholder="-1.14 to 11.1" >
+        </div>     
+
+        <div class="form-group">
+          <label id="label"> Mean corpuscular hemoglobin (MCH)</label>
+          <input type="text" class="form-control" id="input" name="input11" placeholder="-5.1 to 3.41">
+        </div>
+
+        <div class="form-group">
+          <label id="label">Eosinophils</label>
+          <input type="text" class="form-control" id="input" name="input12" placeholder="-0.84 to 8.35">
+        </div>
+
+        
+        <div class="form-group">
+          <label id="label">Mean corpuscular volume (MCV) </label>
+          <input type="text" class="form-control" id="input" name="input13" placeholder="-5.1 to 3.41" >
+        </div>
+
+        <div class="form-group">
+          <label id="label">Monocytes</label>
+          <input type="text" class="form-control" id="input" name="input14" placeholder="-2.16 to 4.53">
+        </div>
+
+        <div class="form-group">
+          <label id="label">Red blood cell distribution width (RDW) </label>
+          <input type="text" class="form-control" id="input" name="input15" placeholder="-1.6 to 6.98">
+        </div>     
+
+        <div class="form-group">
+          <label id="label">Neutrophils</label>
+          <input type="text" class="form-control" id="input" name="input16" placeholder="-3.34 to 2.54">
+        </div>
+
+        <div class="form-group">
+          <label id="label">Proteina C reativa mg/dL</label>
+          <input type="text" class="form-control" id="input" name="input17" placeholder="-0.54 to 8.03">
+        </div>
+
+
+        <div class="form-group">
+        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> PREDICT </button>    
+    </div>
+    
+      </form>
+
+      
+      </div>
+    
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="/static/PredictionPage.css">
+    <link rel="stylesheet" type = "text/css" href ="/static/bootstrap.min.css">
+  <script type="text/javascript" src="/static/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/bootstrap.min.js"></script>
+  </head>
+  <body>
+   <h1 id="myTitle">COVID-19 Patient Severity Prediction Using Machine Learning</h1>
+
+   <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </button>
+
+  <script type="text/javascript">
+    window.onscroll = function()
+    {
+      scrollFunction()
+    };
+
+    function scrollFunction(){
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean-search" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.php">COVID-19 Severity Prediction</a>
+      </div>
+
+      <div class="collapse navbar-collapse " id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="">Welcome!!!</a></li>
+          
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Please Log In </a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+    <div class="center">
+      <h1>Login</h1>
+      <form action="/" method="POST">
+        <div class="txt_field">
+          <input type="text" required name="login">
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" required name="password">
+          <span></span>
+          <label>Password</label>
+        </div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          Not a member? <a href="#">Signup</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
